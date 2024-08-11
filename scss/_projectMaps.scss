@@ -7,3 +7,20 @@ $custom-colors: (
 
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+// Breakpoints
+$breakpoints: (
+        'small': 480px,
+        'medium': 768px,
+        'large': 1024px,
+        'x-large': 1200px
+);
+
+// Font sizes map
+$font-sizes: (
+        'small': 0.875rem,
+        'base': 1rem,
+        'large': 1.5rem,
+        'x-large': 2.5rem
+);

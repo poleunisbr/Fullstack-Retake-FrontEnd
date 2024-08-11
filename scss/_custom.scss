@@ -1,0 +1,75 @@
+// _custom.scss
+
+// Header Custom Styles
+header h1 {
+  font-size: map-get($font-sizes, 'x-large');
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: $padding-base;
+  border-radius: 10px;
+}
+
+// Section Headers
+section h2 {
+  font-size: map-get($font-sizes, 'large');
+  color: $text-color;
+}
+
+// Paragraph Styles
+section p {
+  font-size: map-get($font-sizes, 'base');
+  color: $light-text-color;
+  max-width: 800px;
+  margin: auto;
+}
+
+// Global Styles
+body {
+  font-family: $font-family-base;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+nav {
+  background-color: $primary-color;
+  color: white;
+  padding: $padding-base;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header {
+  background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+  height: 600px;
+  color: white;
+  @include flex-center;
+  text-align: center;
+}
+
+section {
+  padding: $padding-section;
+  text-align: center;
+}
+
+footer {
+  background-color: $text-color;
+  color: white;
+  text-align: center;
+  padding: $padding-base;
+}

@@ -17,3 +17,30 @@ $utilities: (
     ),
   ),
 );
+
+// _projectUtilities.scss
+
+// Flex Center Mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Clearfix Mixin
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Utility Classes
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
