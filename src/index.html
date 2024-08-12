@@ -9,57 +9,112 @@
 <body>
 
 <!-- Navigation Bar -->
-<nav>
-    <ul>
-        <li><a href="#welcome">Welcome</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#produce">Our Produce</a></li>
-        <li><a href="#farming-practices">Farming Practices</a></li>
-        <li><a href="#community">Community Involvement</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Sunny Meadows Farm</a>
+        Sunny Meadows Farm
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#welcome">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#produce">Our Produce</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#farming-practices">Farming Practices</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#community">Community Involvement</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
 <!-- Header / Welcome Section -->
-<header id="welcome">
-    <h1>Welcome to Sunny Meadows Farm</h1>
-    <p>Your source for organic vegetables, fruits, and dairy products.</p>
+<header id="welcome" class="jumbotron text-center">
+    <div class="container">
+        <div id="header-bg">
+            <h1 class="display-4">Welcome to Sunny Meadows Farm</h1>
+            <p class="lead">Your source for organic vegetables, fruits, and dairy products.</p>
+        </div>
+    </div>
 </header>
 
 <!-- About Us Section -->
-<section id="about">
+<section id="about" class="container mt-5">
     <h2>About Us</h2>
-    <p>Sunny Meadows Farm is a family-owned farm committed to producing the freshest organic produce while supporting sustainable agriculture.</p>
+    <p class="p-2">Sunny Meadows Farm is a family-owned enterprise dedicated to cultivating high-quality organic produce. Our mission is to support sustainable agricultural practices and provide fresh, wholesome food to our community.</p>
+    <p class="p-2">Our commitment to organic farming is rooted in a respect for the environment and a passion for producing food that nourishes both people and the planet. We prioritize practices that enhance soil health, conserve water, and promote biodiversity, ensuring that our farm contributes positively to the ecosystem.</p>
+    <p class="p-2">We believe in transparency and education, offering opportunities for the community to learn about sustainable farming and the origins of their food. Through our farm tours, workshops, and seasonal events, we aim to foster a deeper connection between people and agriculture.</p>
+    <p class="p-2">At Sunny Meadows Farm, we strive to combine tradition with innovation, creating a farm that honors the past while embracing the future. Join us in our journey towards sustainability and experience the care and dedication that goes into every aspect of our farming practices.</p>
 </section>
 
 <!-- Our Produce Section -->
-<section id="produce">
+<section id="produce" class="container mt-5">
     <h2>Our Produce</h2>
-    <p>We offer a variety of seasonal vegetables, fruits, and dairy products. Check out our farm shop to see what's available this season.</p>
+    <div id="produce-container" class="row">
+
+    </div>
 </section>
 
 <!-- Farming Practices Section -->
-<section id="farming-practices">
+<section id="farming-practices" class="container mt-5">
     <h2>Farming Practices</h2>
-    <p>Our farm is dedicated to organic farming practices, ensuring that our produce is both healthy for you and kind to the environment.</p>
+    <div id="farming-practices-accordion" class="accordion">
+
+    </div>
 </section>
 
 <!-- Community Involvement Section -->
-<section id="community">
+<section id="community" class="container mt-5">
     <h2>Community Involvement</h2>
-    <p>We believe in giving back to our community. We regularly participate in local farmers' markets and host events on sustainable farming practices.</p>
+    <div id="community-events-container">
+
+    </div>
 </section>
 
 <!-- Contact Us Section -->
-<section id="contact">
+<section id="contact" class="container mt-5">
     <h2>Contact Us</h2>
     <p>Visit us at our farm or contact us at (555) 123-4567. We're located at 123 Farm Lane, Countryside, USA.</p>
+
+    <!-- Contact Form -->
+    <form id="contact-form">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="form-response" class="mt-3"></div>
 </section>
 
+
 <!-- Footer -->
-<footer>
+<footer class="text-center py-3 mt-5">
     <p>&copy; 2024 Sunny Meadows Farm. This is a fictional website for demonstration purposes.</p>
 </footer>
-
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
+

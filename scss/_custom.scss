@@ -1,12 +1,5 @@
 // _custom.scss
 
-// Header Custom Styles
-header h1 {
-  font-size: map-get($font-sizes, 'x-large');
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: $padding-base;
-  border-radius: 10px;
-}
 
 // Section Headers
 section h2 {
@@ -28,6 +21,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  background-color: lightyellow;
 }
 
 nav {
@@ -38,6 +32,7 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav ul {
@@ -48,18 +43,41 @@ nav ul {
   justify-content: space-around;
 }
 
+nav ul li {
+  margin: 0 15px;
+}
+
 nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: darken($primary-color, 10%);
 }
 
 header {
-  background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+  background: url('/assets/image.jpg') no-repeat center center/cover;
   height: 600px;
   color: white;
-  @include flex-center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 0 $padding-base;
+}
+
+header #header-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
 }
 
 section {
@@ -68,8 +86,76 @@ section {
 }
 
 footer {
-  background-color: $text-color;
-  color: white;
+  background-color: $primary-color;
+  color: $text-color;
   text-align: center;
   padding: $padding-base;
+}
+
+// Accordion Styles
+.accordion-button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: darken($primary-color, 10%);
+}
+
+.accordion-button:hover {
+  background-color: darken($primary-color, 15%);
+}
+
+.accordion-body {
+  background-color: #f8f9fa;
+}
+
+$card-bg-color: #f8f9fa;
+$card-border-color: #dee2e6;
+$card-hover-bg-color: #e9ecef;
+$card-text-color: #212529;
+
+
+.card {
+  border: 1px solid $card-border-color;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  background-color: $card-bg-color;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  background-color: $card-hover-bg-color;
+  transform: translateY(-5px);
+}
+
+.card img {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.card-body {
+  padding: 1.25rem;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+
+.accordion-body img {
+  max-width: 100%;
+  height: auto;
 }
