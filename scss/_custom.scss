@@ -159,3 +159,14 @@ $card-text-color: #212529;
   max-width: 100%;
   height: auto;
 }
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 10px;
+  width: auto;
+}
