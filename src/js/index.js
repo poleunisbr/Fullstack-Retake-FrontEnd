@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Define the API endpoints
     const apiBaseUrl = "https://my-json-server.typicode.com/poleunisbr/json-srv";
 
     // Fetch and display produce items
@@ -85,9 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
     loadCommunityEvents();
 });
 
-// The function to handle contact form submission
+// function to handle contact form submission
 function handleContactFormSubmission(form, responseDiv, apiUrl) {
-    // Create an object with form data
     const formData = new FormData(form);
     const data = {
         name: formData.get('name'),
@@ -95,7 +93,6 @@ function handleContactFormSubmission(form, responseDiv, apiUrl) {
         message: formData.get('message')
     };
 
-    // Send the form data using fetch
     fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -105,12 +102,10 @@ function handleContactFormSubmission(form, responseDiv, apiUrl) {
     })
         .then(response => response.json())
         .then(data => {
-            // Display success message
             responseDiv.innerHTML = `<div class="alert alert-success" role="alert">${data.message}</div>`;
-            form.reset(); // Reset form fields
+            form.reset();
         })
         .catch(error => {
-            // Display error message
             responseDiv.innerHTML = `<div class="alert alert-danger" role="alert">There was a problem with your submission. Please try again later.</div>`;
             console.error('Error:', error);
         });
