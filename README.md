@@ -1,6 +1,6 @@
 # 1ITF & 1ACS Full Stack Essentials (2023-2024)
 
-## Name [Your name]
+## Name Bryan Poleunis
 
 
 - **GitHub Repo**: [https://github.com/poleunisbr/Fullstack-Retake-FrontEnd](https://github.com/poleunisbr/Fullstack-Retake-FrontEnd)
