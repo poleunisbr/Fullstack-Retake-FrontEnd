@@ -69,36 +69,14 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error('Error fetching community events data:', error));
     }
 
-    // Handle contact form submission
+    // Event listener for contact form submission
     const form = document.getElementById('contact-form');
     const responseDiv = document.getElementById('form-response');
 
     form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
 
-        const formData = new FormData(form);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            message: formData.get('message')
-        };
-
-        fetch('http://localhost:8000/contact/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(data => {
-                responseDiv.innerHTML = `<div class="alert alert-success" role="alert">${data.message}</div>`;
-                form.reset(); // Reset form fields
-            })
-            .catch(error => {
-                responseDiv.innerHTML = `<div class="alert alert-danger" role="alert">There was a problem with your submission. Please try again later.</div>`;
-                console.error('Error:', error);
-            });
+        handleContactFormSubmission(form, responseDiv, 'http://localhost:8000/contact/');
     });
 
     // Load data when the page is ready
@@ -106,3 +84,34 @@ document.addEventListener("DOMContentLoaded", function () {
     loadFarmingPractices();
     loadCommunityEvents();
 });
+
+// The function to handle contact form submission
+function handleContactFormSubmission(form, responseDiv, apiUrl) {
+    // Create an object with form data
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+    };
+
+    // Send the form data using fetch
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Display success message
+            responseDiv.innerHTML = `<div class="alert alert-success" role="alert">${data.message}</div>`;
+            form.reset(); // Reset form fields
+        })
+        .catch(error => {
+            // Display error message
+            responseDiv.innerHTML = `<div class="alert alert-danger" role="alert">There was a problem with your submission. Please try again later.</div>`;
+            console.error('Error:', error);
+        });
+}
