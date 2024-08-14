@@ -3,7 +3,7 @@
 ## Name [Your name]
 
 
-- **GitHub Repo**: [https://github.com/[Your Username]/...](https://github.com/[Your Username]/....)
-- **Netlify Hosting**: [https://subdomain.netlify.app](https://subdomain.netlify.app)
-
+- **GitHub Repo**: [https://github.com/poleunisbr/Fullstack-Retake-FrontEnd](https://github.com/poleunisbr/Fullstack-Retake-FrontEnd)
+- **Netlify Hosting**: [https://fullstack-retake.netlify.app](https://fullstack-retake.netlify.app)
+  
 This is an **<u>individual</u>** project! Any form of copying or collaboration is strictly prohibited.
